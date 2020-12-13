@@ -1,0 +1,13 @@
+{% extends 'myapp/main.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Author information</h1>
+<button class="btn btn-outline-info">
+    <a href="{% url 'create_blog' author.id %}">Create Blog</a>
+</button>
+    <ul>
+        <li>{{author.email}}</li>
+        <li>{{author.phone}}</li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'myapp/main.html' %}
+
+    {% block content %}
+    <h1>Welcome to my django website</h1>
+    {% for author in authors %}
+    <ul>
+        <li>
+            <a href="{% url 'authorPage' author.id %}">
+                {{author.name}}
+            </a>
+        </li>
+    </ul>
+    {% endfor %}
+    <br>
+    <p>Total post: {{total_blog}}</p>
+    {% for i in posts %}
+    <h2><span>No. {{i.id}}</span> {{i.title}}</h2>
+    <p>{{i.author.name}} | {{i.pub_date}} | {{i.category}}</p>
+    {% endfor %}
+    {% endblock %}
